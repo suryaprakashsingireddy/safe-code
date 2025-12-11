@@ -184,30 +184,3 @@ A Run button
 A section to display output or errors
 
 This helps non-technical users test the service easily.
-
-Final Deliverables
-Code
-
-/run API endpoint
-
-Docker integration
-
-Safety features (timeouts, memory limits, network isolation)
-
-Documentation
-
-Setup instructions
-
-Example API calls
-
-Explanation of security measures
-
-Summary of what was learned
-
-Demo
-
-Running normal code
-
-Demonstrating safety protections
-
-Web UI walkthrough
