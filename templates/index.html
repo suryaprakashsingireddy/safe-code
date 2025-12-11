@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safe Code Executor</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: Consolas, monospace;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #9cdcfe;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            background: #252526;
+            color: #ffffff;
+            border: 1px solid #3c3c3c;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+
+        select {
+            padding: 8px;
+            background: #252526;
+            color: white;
+            border: 1px solid #3c3c3c;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #0e639c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background: #1177bb;
+        }
+
+        pre {
+            background: #1b1b1b;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            color: #9cdcfe;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Safe Code Executor (Python + JavaScript)</h2>
+
+<label>Select Language:</label><br>
+<select id="language">
+    <option value="python">Python</option>
+    <option value="javascript">JavaScript</option>
+</select>
+
+<br><br>
+
+<textarea id="code" placeholder="Write your code here..."></textarea><br><br>
+
+<button onclick="runCode()">Run Code</button>
+<button onclick="viewHistory()">View Execution History</button>
+
+<h3>Output:</h3>
+<pre id="output"></pre>
+
+<h3>History:</h3>
+<pre id="history"></pre>
+
+<script>
+async function runCode() {
+    const code = document.getElementById("code").value;
+    const language = document.getElementById("language").value;
+
+    const res = await fetch("/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ language, code })
+    });
+
+    const data = await res.json();
+    document.getElementById("output").innerText =
+        "Output:\n" + (data.output || "") +
+        "\nError:\n" + (data.error || "");
+}
+
+async function viewHistory() {
+    const res = await fetch("/history");
+    const text = await res.text();
+    document.getElementById("history").innerText = text;
+}
+</script>
+
+</body>
+</html>

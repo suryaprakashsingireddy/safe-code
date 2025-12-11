@@ -1,0 +1,256 @@
+
+----------------------------
+TIME: 2025-12-10 16:01:04
+STATUS: EXECUTION STOPPED (Killed by Docker)
+RETURN CODE: 137
+
+USER CODE:
+x = 'A' * 1000000000
+
+OUTPUT:
+
+
+ERROR:
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:02:51
+STATUS: EXECUTION STOPPED (Killed by Docker)
+RETURN CODE: 137
+
+USER CODE:
+while True:
+    pass
+
+OUTPUT:
+
+
+ERROR:
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:05:53
+STATUS: RUNTIME ERROR
+RETURN CODE: 1
+
+USER CODE:
+import requests
+requests.get('http://evil.com')
+
+OUTPUT:
+
+
+ERROR:
+Traceback (most recent call last):
+  File "/app/temp_ecaf0ca0bb3d4493883b39548a653e2c.py", line 1, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:07:37
+STATUS: SUCCESS
+RETURN CODE: 0
+
+USER CODE:
+with open('/etc/passwd') as f:
+    print(f.read())
+
+OUTPUT:
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+
+
+
+ERROR:
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:08:48
+STATUS: SUCCESS
+RETURN CODE: 0
+
+USER CODE:
+with open('/etc/passwd') as f:
+    print(f.read())
+
+OUTPUT:
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+
+
+
+ERROR:
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:10:28
+STATUS: RUNTIME ERROR
+RETURN CODE: 1
+
+USER CODE:
+with open('/tmp/test.txt', 'w') as f:
+    f.write('hacked!')
+
+OUTPUT:
+
+
+ERROR:
+Traceback (most recent call last):
+  File "/app/temp_a7786cfe8e9043c68c9f246cc93ec115.py", line 1, in <module>
+    with open('/tmp/test.txt', 'w') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: '/tmp/test.txt'
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:12:08
+STATUS: RUNTIME ERROR
+RETURN CODE: 1
+
+USER CODE:
+with open('/tmp/test.txt', 'w') as f:
+    f.write('hacked!')
+
+OUTPUT:
+
+
+ERROR:
+Traceback (most recent call last):
+  File "/app/temp_9016b40ff75f4a90a107bc98cb7befc2.py", line 1, in <module>
+    with open('/tmp/test.txt', 'w') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: '/tmp/test.txt'
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:14:16
+STATUS: RUNTIME ERROR
+RETURN CODE: 1
+
+USER CODE:
+with open('/tmp/test.txt', 'w') as f:
+    f.write('hacked!')
+
+OUTPUT:
+
+
+ERROR:
+Traceback (most recent call last):
+  File "/app/temp_806f5cd88fe548e2abe435bd70e8ef46.py", line 1, in <module>
+    with open('/tmp/test.txt', 'w') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: '/tmp/test.txt'
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:14:47
+STATUS: RUNTIME ERROR
+RETURN CODE: 1
+
+USER CODE:
+with open('/tmp/test.txt', 'w') as f:
+    f.write('hacked!')
+
+OUTPUT:
+
+
+ERROR:
+Traceback (most recent call last):
+  File "/app/temp_5232307e2c2c4fa09808c88796428f30.py", line 1, in <module>
+    with open('/tmp/test.txt', 'w') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: '/tmp/test.txt'
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:17:17
+STATUS: RUNTIME ERROR
+RETURN CODE: 1
+
+USER CODE:
+print("hello)
+
+OUTPUT:
+
+
+ERROR:
+  File "/app/temp_009691f85a774987b09a342132239ed1.py", line 1
+    print("hello)
+          ^
+SyntaxError: unterminated string literal (detected at line 1)
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:17:26
+STATUS: SUCCESS
+RETURN CODE: 0
+
+USER CODE:
+print("hello")
+
+OUTPUT:
+hello
+
+
+ERROR:
+
+----------------------------
+
+----------------------------
+TIME: 2025-12-10 16:19:58
+STATUS: SUCCESS
+RETURN CODE: 0
+
+USER CODE:
+with open('/tmp/test.txt', 'w') as f:
+    f.write('hacked!')
+
+OUTPUT:
+
+
+ERROR:
+
+----------------------------
